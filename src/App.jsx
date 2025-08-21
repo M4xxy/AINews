@@ -17,7 +17,7 @@ export default function App() {
         ).then((res) => res.json());
 
         const api2 = fetch(
-          `https://content.guardianapis.com/search?q=${category}&api-key=6761175a-9f6b-4adb-ad8c-52e21756af91`
+          `https://content.guardianapis.com/search?q=${category}&api-key=6761175a-9f6b-4adb-ad8c-52e21756af91&show-fields=thumbnail`
         ).then((res) => res.json());
 
         const api3 = fetch(
@@ -38,7 +38,7 @@ export default function App() {
             title: n.webTitle,
             url: n.webUrl,
             date: n.webPublicationDate,
-            image: n.fields?.thumbnail,
+            image: n.fields?.thumbnail || null, 
             source: "The Guardian",
           })),
           ...(data3.response?.docs || []).map((n) => ({
