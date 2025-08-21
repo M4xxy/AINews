@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import NewsCard from "./components/NewsCard";
-import "./styles/App.css";
+import "./styles/app.css";
 
 const categories = ["AI", "Machine Learning", "Robotics"];
 
